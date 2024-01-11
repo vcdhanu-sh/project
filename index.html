@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appoinment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="img.png" class="logo">
+            <h1>Doctor Appointment</h1>
+            <p>Managment System</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Bookappointment">Book Appointment</a></li>
+            <li><a href="#Checkstatus">Check Status</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="Home">
+        <div class="section-content">
+            <div class="column1">
+                <img src="doctor.jpg" class="homeimg">
+            </div>
+
+            <div class="column2">
+                <img src="doctor2.jpg" class="homeimg2">
+            </div>
+        </div>
+    </section>
+
+    <section id="About">
+        <div class="section-content2">
+            <h2>About Us</h2>
+            <p>Our mission declares our purpose of existence as a company and our<br> objectives.<br><br>
+                To give every customer much more than what he/she asks for in terms of quality,<br> selection, value for money and customer service,<br> by understanding local tastes and preferences and innovating constantly to<br> eventually provide an unmatched experience in jewellery shopping.</p>
+        </div>
+    </section>
+
+    <section id="Bookappointment">
+        <div class="section-content3">
+            <section class="section-padding" id="booking">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <div class="booking-form">
+
+                                <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
+
+                                <form role="form" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required='true'>
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required='true'>
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <input type="telephone" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number" maxlength="10">
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <input type="date" name="date" id="date" value="" class="form-control">
+
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <input type="time" name="time" id="time" value="" class="form-control">
+
+                                        </div>
+
+                                        <div class="col-lg-6 col-12">
+                                            <select onChange="getdoctors(this.value);" name="specialization" id="specialization" class="form-control" required>
+                                                <option value="">Select specialization</option>
+                                                <!--- Fetching States--->
+                                                <?php
+$sql="SELECT * FROM tblspecialization";
+$stmt=$dbh->query($sql);
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+while($row =$stmt->fetch()) { 
+  ?>
+                                                <option value="<?php echo $row['ID'];?>"><?php echo $row['Specialization'];?></option>
+                                                <?php }?>
+                                            </select>
+                                        </div>
+
+
+                                        <div class="col-lg-6 col-12">
+                                            <select name="doctorlist" id="doctorlist" class="form-control">
+                                                <option value="">Select Doctor</option>
+                                            </select>
+                                        </div>
+
+
+
+                                        <div class="col-12">
+                                            <textarea class="form-control" rows="5" id="message" name="message" placeholder="Additional Message"></textarea>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 col-6 mx-auto">
+                                            <button type="submit" class="form-control" name="submit" id="submit-button">Book Now</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </section>
+
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+
+                <div class="col">
+                    <h5 class="mb-3">Timing</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex">
+
+                            10:30 am to 7:30 pm </li>
+                    </ul>
+                    <br>
+                    <br>
+
+                    <h5 class="mb-4">Email</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex">
+                            info@gmail.com</li>
+                        <br>
+                        <br>
+                        <h5 class="mb-5">Contact Number</h5>
+                        <li class="list-group-item d-flex">
+                            7896541239</li>
+                    </ul>
+                </div>
+
+                <div class="col2">
+                    <h5 class="mb-6">Our Clinic</h5>
+                    <p>890,Sector 62,<br> Gyan Sarovar,<br> GAIL Noida(Delhi/NCR)</p>
+                </div>
+
+                <div class="col3">
+                    <h5 class="mb">Socials</h5>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        // Smooth scrolling to section when clicking on navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    </body>
+
+
+    </html>

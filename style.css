@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+header{
+    
+    background-color: dodgerblue;
+    color: #fff;
+    
+   
+}
+header h1{
+    margin: 0 20px;
+}
+header p{
+    font-family: fantasy;
+    margin: 0px 70px;
+    letter-spacing: 4px;
+    color:#d3cdcd;
+    font-size: 20px;
+}
+section{
+    margin-bottom: 80px;
+    padding: 20px;
+    
+}
+.logo{
+    width: 5%;
+    cursor: pointer;
+    margin:0 50px;
+}
+
+.homeimg{
+    margin-left: 5px;
+    width:600px;
+    height: 600px;
+  
+  
+    
+    
+}
+.homeimg2{
+     width: 600px;
+    height: 600px;
+    margin-right:5px;
+    
+   
+   
+}
+.section-content{
+    display:flex;
+    column-gap: 10px;
+}
+.section-content2{
+    margin-left: 50px;
+}
+nav{
+    position:static;
+    background-color: dodgerblue;
+    padding: 10px;
+    text-align: center;
+
+}
+nav ul li{
+    list-style: none;
+    display: inline;
+    text-align: end;
+    margin: 0 50px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: fantasy;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+footer {
+           
+            padding: 1rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+.col{
+    margin-left: 100px;
+   
+    
+}
+.col ul li{
+    list-style: none;
+    
+}
+.col2{
+     
+    margin-left: 100px;
+   
+}
+.col3{
+    margin-left: 100px;
+}
+.row{
+    display: flex;
+    
+}

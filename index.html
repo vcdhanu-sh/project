@@ -2,53 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doctor Appoinment</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"/>
+    
+    <script src="javascript.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <img src="img.png" class="logo">
-            <h1>Doctor Appointment</h1>
-            <p>Managment System</p>
-        </div>
-    </header>
+    <header class="header">
+		<h1 class="logo"><a href="#">Doctor Appointment</a></h1>
+      <ul class="main-nav">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Bookappointment">Booking</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+	</header> 
 
-    <nav>
-        <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Bookappointment">Book Appointment</a></li>
-            <li><a href="#Checkstatus">Check Status</a></li>
-        </ul>
-    </nav>
-
+    
 
     <section id="Home">
-        <div class="section-content">
-            <div class="column1">
-                <img src="doctor.jpg" class="homeimg">
-            </div>
-
-            <div class="column2">
-                <img src="doctor2.jpg" class="homeimg2">
+        <div class="hero">
+            <div class="text">
+           <h1>DOCTOR APPOINTMENT</h1>    
+          <p>Management System</p>
             </div>
         </div>
     </section>
-
     <section id="About">
-        <div class="section-content2">
+        <div class="container">
+        <div class="left">
             <h2>About Us</h2>
             <p>Our mission declares our purpose of existence as a company and our<br> objectives.<br><br>
                 To give every customer much more than what he/she asks for in terms of quality,<br> selection, value for money and customer service,<br> by understanding local tastes and preferences and innovating constantly to<br> eventually provide an unmatched experience in jewellery shopping.</p>
+            
+            
+        </div>
+            <div class="right">
+            <img src="doctor.jpg" alt="dc">
+            
+                
+            </div>
         </div>
     </section>
 
     <section id="Bookappointment">
-        <div class="section-content3">
+        <div class="section-content">
             <section class="section-padding" id="booking">
                 <div class="container">
                     <div class="row">
@@ -128,52 +130,39 @@ while($row =$stmt->fetch()) {
     </section>
 
 
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="row">
-
-                <div class="col">
-                    <h5 class="mb-3">Timing</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex">
-
-                            10:30 am to 7:30 pm </li>
-                    </ul>
-                    <br>
-                    <br>
-
-                    <h5 class="mb-4">Email</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex">
-                            info@gmail.com</li>
-                        <br>
-                        <br>
-                        <h5 class="mb-5">Contact Number</h5>
-                        <li class="list-group-item d-flex">
-                            7896541239</li>
-                    </ul>
-                </div>
-
-                <div class="col2">
-                    <h5 class="mb-6">Our Clinic</h5>
-                    <p>890,Sector 62,<br> Gyan Sarovar,<br> GAIL Noida(Delhi/NCR)</p>
-                </div>
-
-                <div class="col3">
-                    <h5 class="mb">Socials</h5>
-
-                </div>
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </footer>
+    	<footer class="footer">
+		<div class="container row">
+			<div class="footer-col">
+				<h4>company</h4>
+				<ul>
+					<li><a href="#">about us</a></li>
+					<li><a href="#">our services</a></li>
+					<li><a href="#">privacy policy</a></li>
+					<li><a href="#">visit website</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>get help</h4>
+				<ul>
+					<li><a href="#">FAQ</a></li>
+					
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Our Clinic</h4>
+				<h5>890,Sector 62,<br> Gyan Sarovar, <br>GAIL Noida(Delhi/NCR)</h5>
+			</div>
+			<div class="footer-col">
+				<h4>follow us</h4>
+				<div class="social-links">
+					<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 
